@@ -1,7 +1,6 @@
-# RProg Assignment by amodashikagome on Dec 27, 2015
-# This two functions together return the inversion of a square matrix, and store the value.
-# If the same matrix is input for the second time, the function simply return the stored value
-# instead of another calculation.
+# ## This two functions together return the inversion of a square matrix, 
+# and store the value. If the same matrix is input for the second time, 
+# the function simply return the stored value instead of another calculation.
 
 # 1.makeCacheMatrix: 
 # # This function creates a special "matrix" object that can cache its inverse.
@@ -10,7 +9,7 @@ makeCacheMatrix <- function(x = matrix()) {
         sol <- NULL             # initialized value is NULL
         set <- function(y) {
                 x <<- y         # set and store the input matrix of value x, 
-                                # passing through the nominal variable y
+                # passing through the nominal variable y
                 sol <<- NULL
         }
         get <- function() x     # get stored matrix value x
@@ -21,10 +20,12 @@ makeCacheMatrix <- function(x = matrix()) {
              getsolve = getsolve)
 }
 
+
 # 2. cacheSolve: This function computes the inverse of the special "matrix" 
 # returned by makeCacheMatrix above.
 
-cacheSolve <- function(x, ...) {               # x a list containing matrices resulted from makeCacheMatrix 
+cacheSolve <- function(x, ...) {
+        ## Return a matrix that is the inverse of 'x'
         sol <- x$getsolve()                    # firstly check if the inversion already exists
         if(!is.null(sol)) {
                 message("getting cached data") # if yes, return what is stored in x$getsolve()
